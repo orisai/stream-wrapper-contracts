@@ -1,0 +1,11 @@
+includes:
+	- phpstan.base.neon
+
+parameters:
+	level: 8
+	resultCachePath: %currentWorkingDirectory%/var/tools/PHPStan/resultCache.src.php
+
+	ignoreErrors:
+		- message: '#^PHPDoc tag \@param for parameter \$(options|flags) contains unresolvable type\.$#'
+		  path: ../src/StreamWrapper.php
+		  count: 4
