@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-	<a href="https://github.com/orisai/stream-wrapper-contracts/actions?query=workflow%3Aci">
-		<img src="https://github.com/orisai/stream-wrapper-contracts/workflows/ci/badge.svg">
+	<a href="https://github.com/orisai/stream-wrapper-contracts/actions?query=workflow%3ACI">
+		<img src="https://github.com/orisai/stream-wrapper-contracts/workflows/CI/badge.svg">
 	</a>
 	<a href="https://coveralls.io/r/orisai/stream-wrapper-contracts">
 		<img src="https://badgen.net/coveralls/c/github/orisai/stream-wrapper-contracts/v1.x?cache=300">
