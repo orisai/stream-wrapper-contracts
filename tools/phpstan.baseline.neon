@@ -1,6 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to static method PHPUnit\\\\Framework\\\\Assert\\:\\:assertTrue\\(\\) with true will always evaluate to true\\.$#"
+			message: '#^Method Orisai\\StreamWrapperContracts\\Tests\\Stubs\\StreamCallMonitor\:\:stream_tell\(\) should return int\<0, max\> but returns int\.$#'
+			identifier: return.type
 			count: 1
-			path: ../tests/Unit/ExampleTest.php
+			path: ../tests/Stubs/StreamCallMonitor.php

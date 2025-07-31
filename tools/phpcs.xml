@@ -16,7 +16,7 @@
 		<properties>
 			<property name="rootNamespaces" type="array">
 				<element key="src" value="Orisai\StreamWrapperContracts"/>
-				<element key="tests" value="Tests\Orisai\StreamWrapperContracts"/>
+				<element key="tests" value="Orisai\StreamWrapperContracts\Tests"/>
 			</property>
 		</properties>
 	</rule>

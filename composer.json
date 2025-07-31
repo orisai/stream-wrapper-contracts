@@ -1,6 +1,6 @@
 {
 	"name": "orisai/stream-wrapper-contracts",
-	"description": "Interface for PHP stream wrapper methods",
+	"description": "Full and type-safe interface for PHP's stream wrapper",
 	"keywords": [
 		"abstractions",
 		"contracts",
@@ -43,7 +43,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Tests\\Orisai\\StreamWrapperContracts\\": "tests"
+			"Orisai\\StreamWrapperContracts\\Tests\\": "tests"
 		}
 	},
 	"minimum-stability": "dev",

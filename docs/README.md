@@ -1,6 +1,6 @@
 # Stream Wrapper Contracts
 
-Interface for PHP stream wrapper methods
+Full and type-safe interface for PHP's [stream wrapper](https://www.php.net/manual/en/class.streamwrapper.php).
 
 ## Content
 
