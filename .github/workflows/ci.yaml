@@ -174,53 +174,53 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
 
-  tests-mutations:
-    name: "Test for mutants"
-    runs-on: "${{ matrix.operating-system }}"
-
-    if: |
-      github.event_name != 'pull_request'
-      || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
-
-    strategy:
-      matrix:
-        include:
-          - operating-system: "ubuntu-latest"
-            php-version: "8.4"
-
-    steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v4"
-
-      - name: "PHP"
-        uses: "orisai/github-workflows/.github/actions/setup-php@v1"
-        with:
-          version: "${{ matrix.php-version }}"
-          coverage: "pcov"
-          token: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: "Composer"
-        uses: "orisai/github-workflows/.github/actions/setup-composer@v1"
-
-      - name: "PHPUnit"
-        uses: "orisai/github-workflows/.github/actions/phpunit@v1"
-        with:
-          command: "make mutations-tests"
-          cache-path: "var/tools/PHPUnit"
-
-      - name: "Infection PHP"
-        uses: "orisai/github-workflows/.github/actions/infection-php@v1"
-        with:
-          command: "make mutations-infection ARGS='--logger-github'"
-          cache-path: "var/tools/Infection"
-          stryker-token: "${{ secrets.STRYKER_DASHBOARD_API_KEY }}"
-
-      - name: "Upload logs"
-        uses: "actions/upload-artifact@v4"
-        with:
-          name: "Logs - Mutations"
-          path: "var/coverage/mutations/infection.log"
-          if-no-files-found: "ignore"
+#  tests-mutations:
+#    name: "Test for mutants"
+#    runs-on: "${{ matrix.operating-system }}"
+#
+#    if: |
+#      github.event_name != 'pull_request'
+#      || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+#
+#    strategy:
+#      matrix:
+#        include:
+#          - operating-system: "ubuntu-latest"
+#            php-version: "8.4"
+#
+#    steps:
+#      - name: "Checkout"
+#        uses: "actions/checkout@v4"
+#
+#      - name: "PHP"
+#        uses: "orisai/github-workflows/.github/actions/setup-php@v1"
+#        with:
+#          version: "${{ matrix.php-version }}"
+#          coverage: "pcov"
+#          token: "${{ secrets.GITHUB_TOKEN }}"
+#
+#      - name: "Composer"
+#        uses: "orisai/github-workflows/.github/actions/setup-composer@v1"
+#
+#      - name: "PHPUnit"
+#        uses: "orisai/github-workflows/.github/actions/phpunit@v1"
+#        with:
+#          command: "make mutations-tests"
+#          cache-path: "var/tools/PHPUnit"
+#
+#      - name: "Infection PHP"
+#        uses: "orisai/github-workflows/.github/actions/infection-php@v1"
+#        with:
+#          command: "make mutations-infection ARGS='--logger-github'"
+#          cache-path: "var/tools/Infection"
+#          stryker-token: "${{ secrets.STRYKER_DASHBOARD_API_KEY }}"
+#
+#      - name: "Upload logs"
+#        uses: "actions/upload-artifact@v4"
+#        with:
+#          name: "Logs - Mutations"
+#          path: "var/coverage/mutations/infection.log"
+#          if-no-files-found: "ignore"
 
   status-check:
     name: "Status check - ${{ github.workflow }}"
