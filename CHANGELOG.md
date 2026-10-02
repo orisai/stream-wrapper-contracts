@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](https://github.com/orisai/stream-wrapper-contracts/compare/1.0.0...v1.x)
 
+### Added
+
+- Support for PHP 8.5 and 8.6
+
 ## [1.0.0](https://github.com/orisai/stream-wrapper-contracts/releases/tag/1.0.0) - 2025-07-31
